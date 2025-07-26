@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Message</title>
+</head>
+
+<body>
+
+    <h3>User ID: <%= editChat._id %>
+    </h3>
+
+    <p>Message sended from <b>
+            <%= editChat.from %>
+        </b> to <b>
+            <%= editChat.to %>
+        </b> </p>
+
+    <!-- for update PUT request npm se lia hua -->
+
+    <form method="POST" action="/chats/<%= editChat._id %>/?_method=PUT">
+        <textarea name="msg"> <%= editChat.msg %>   </textarea> <br> <br>
+        <button>Edit</button>
+    </form>
+
+
+
+</body>
+
+</html>

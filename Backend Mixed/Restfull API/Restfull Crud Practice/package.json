@@ -1,0 +1,20 @@
+{
+  "name": "restfull-crud-practice",
+  "version": "1.0.0",
+  "description": "Crud in NOde jd for practice",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "crud"
+  ],
+  "author": "Danish",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "method-override": "^3.0.0",
+    "uuid": "^11.1.0"
+  }
+}

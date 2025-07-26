@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Book</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="bodyEdit">
+  <div>
+    <h1>Edit Book</h1>
+   <a href="http://localhost:5000/allData"> <button >Back</button></a>
+    <form class="editForm" action="/editData/<%= editData._id %>?_method=Put" method="POST">
+      <p> Document ID: <%= editData._id %> </p>
+
+      <label>Title:</label>
+      <input type="text" name="title" value="<%= editData.title %>" required>
+
+      <label>Author:</label>
+      <input type="text" name="author" value="<%= editData.author %>" required>
+
+      <label>Category:</label>
+      <input type="text" name="category" value="<%= editData.category %>" required>
+
+      <label>Price:</label>
+      <input type="number" name="price" value="<%= editData.price %>" required>
+
+      <button class="buttonUpdate" type="submit">Update</button>
+    </form>
+  </div>
+</body>
+</html>

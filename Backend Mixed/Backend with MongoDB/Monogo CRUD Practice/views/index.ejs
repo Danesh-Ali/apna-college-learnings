@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book List</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Books</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Created At</th>
+        <th colspan="2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const book of allData) { %>
+        <tr>
+          <td><%= book.title %></td>
+          <td><%= book.author %></td>
+          <td><%= book.category %></td>
+          <td><%= book.price %></td>
+          <td><%= book.createdAt.toDateString() %></td>
+          <td>
+            <form method="get" action="/allData/<%= book.id %>/edit">
+              <button>Edit</button>
+            </form>
+          </td>
+          <td>
+            <form method="POST" action="/allData/<%= book.id %>?_method=DELETE">
+              <button>Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+</html>

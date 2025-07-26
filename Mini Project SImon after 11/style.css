@@ -1,0 +1,38 @@
+body{
+    text-align: center;
+}
+
+.box-container{
+display: flex;
+justify-content: center;
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    border: 10px solid black;
+    border-radius: 40px;
+    margin: 25px;
+}
+
+.red{
+    background-color: #d95980;
+}
+.green{
+    background-color: #63aac0;
+}
+.purple{
+    background-color: #819ff9;
+}
+.yellow{
+    background-color: #f99b45;
+}
+
+.flash {
+    opacity: 0.5;
+    transition: opacity 0.25s;
+}
+.game-over{
+    background-color: red;
+    color: white;
+}

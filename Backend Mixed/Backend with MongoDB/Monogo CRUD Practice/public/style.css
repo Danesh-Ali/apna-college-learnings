@@ -1,0 +1,167 @@
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 20px;
+    }
+
+
+
+    h1 {
+      text-align: center;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    table {
+      margin: auto;
+      border-collapse: collapse;
+      width: 90%;
+      animation: fadeIn 1.5s ease-in-out;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      background-color: white;
+    }
+
+    th, td {
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #ccc;
+      transition: background-color 0.3s ease;
+    }
+
+    tr:hover {
+      background-color: #f0f8ff;
+    }
+
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    button {
+      padding: 8px 16px;
+      border: none;
+      background-color: #28a745;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    form {
+      margin: 0;
+    }
+
+    /* Delete button style */
+    td form:nth-child(2) button {
+      background-color: #dc3545;
+    }
+
+    td form:nth-child(2) button:hover {
+      background-color: #c82333;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+
+    /* styles.css */
+
+.bodyEdit {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f9;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.editForm {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
+  width: 100%;
+  max-width: 400px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.buttonUpdate {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.03);
+}
+
+p {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

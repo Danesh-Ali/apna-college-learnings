@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini whatsapp</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    
+
+ <h2 class="chat-heading">All Chats</h2>
+
+<form method="GET" action="/chats/new" class="new-chat-form">
+    <button type="submit" class="new-chat-button">New Chat</button>
+</form>
+
+
+<% for(let chat of allChats){ %>
+    <div class="chat-container">
+        <% if (chat.from === "two") { %>
+            <div class="chat-bubble right">
+                <p class="meta">From: <%= chat.from %> | To: <%= chat.to %></p>
+                <p><%= chat.msg %></p>
+                <form method="get" action="/chats/<%= chat._id %>/edit">
+                    <button>Edit Message</button>
+                </form> <br>
+                <form method="POST" action="/chats/<%= chat._id %>?_method=DELETE">
+                    <button>Delete</button>
+                </form> 
+                <hr>
+                <p><%= new Date(chat.created_at).toLocaleTimeString() %></p>
+                <p><%= new Date(chat.created_at).toLocaleDateString() %></p>
+            </div>
+        <% } else { %>
+            <div class="chat-bubble left">
+                <p class="meta">From: <%= chat.from %> | To: <%= chat.to %></p>
+                <p><%= chat.msg %></p>
+                 <form method="get" action="/chats/<%= chat._id %>/edit">
+                    <button>Edit Message</button>
+                </form> <br>
+                <form method="POST" action="/chats/<%= chat._id %>?_method=DELETE">
+                    <button>Delete</button>
+                </form> 
+                <hr>
+                <p><%= new Date(chat.created_at).toLocaleTimeString() %></p>
+                <p><%= new Date(chat.created_at).toLocaleDateString() %></p>
+            </div>
+        <% } %>
+    </div>
+<% } %>
+
+
+</body>
+
+</html>

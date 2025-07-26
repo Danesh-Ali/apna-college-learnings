@@ -1,0 +1,95 @@
+<% layout('layout/boilerplate.ejs') -%>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-lg">
+        <div class="card-header text-center text-white bg-pink">
+          <h4 class="mb-0 ">Create Your Account</h4>
+        </div>
+        <div class="card-body">
+          <form method="POST" action="/signup" class="needs-validation"  novalidate>
+            
+            <!-- Username -->
+            <div class="form-group">
+              <label for="username"><i class="fas fa-user mr-1"></i>Username</label>
+              <input type="text" class="form-control" id="username" name="username" placeholder="Enter a username" >
+              <small class="form-text text-muted">Username must be 3–20 characters, alphanumeric only.</small>
+              <div class="valid-feedback" > Username Looks good!</div>
+              <div class="invalid-feedback "> Please enter the username!  </div>
+               
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email"><i class="fas fa-envelope mr-1"></i>Email address</label>
+              <input type="email" class="form-control" id="email" name="email" required placeholder="Enter your email">
+              <small class="form-text text-muted">We'll never share your email.</small>
+              <div class="valid-feedback"> Email Looks good!</div>
+                <div class="invalid-feedback"> Please enter the valid email!  </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+              <label for="password"><i class="fas fa-lock mr-1"></i>Password</label>
+              <input type="password" class="form-control" id="password" name="password" required placeholder="Create a password" oninput="checkPasswordStrength()">
+              <small id="passwordHelp" class="form-text text-muted">At least 8 characters, 1 uppercase, 1 number.</small>
+              <div class="progress mt-2" style="height: 5px;">
+                <div id="strengthBar" class="progress-bar bg-danger" style="width: 0%;"></div>
+              </div>
+              <div class="valid-feedback"></div>
+                <div class="invalid-feedback"> Please enter the password!  </div>
+            </div>
+
+            <!-- Confirm Password
+            <div class="form-group">
+              <label for="confirmPassword"><i class="fas fa-lock mr-1"></i>Confirm Password</label>
+              <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required placeholder="Repeat your password">
+              <small id="matchMessage" class="form-text text-danger d-none">Passwords do not match.</small>
+            </div> -->
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-dark btn-pink btn-block">Sign Up</button>
+          </form>
+        </div>
+        <div class="card-footer text-center">
+          <small>Already have an account? <a href="/login">Sign in here</a></small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optional JS for UX Enhancements -->
+<script>
+
+ 
+  function checkPasswordStrength() {
+    const password = document.getElementById("password").value;
+    const bar = document.getElementById("strengthBar");
+    let strength = 0;
+
+    if (password.length >= 8) strength += 1;
+    if (/[A-Z]/.test(password)) strength += 1;
+    if (/[0-9]/.test(password)) strength += 1;
+    if (/[\W]/.test(password)) strength += 1;
+
+    const widths = ["0%", "25%", "50%", "75%", "100%"];
+    const classes = ["bg-danger", "bg-warning", "bg-info", "bg-primary", "bg-success"];
+
+    bar.style.width = widths[strength];
+    bar.className = "progress-bar " + classes[strength];
+  }
+
+//   document.getElementById("confirmPassword").addEventListener("input", function () {
+//     const pass = document.getElementById("password").value;
+//     const confirm = this.value;
+//     const msg = document.getElementById("matchMessage");
+
+//     if (confirm && confirm !== pass) {
+//       msg.classList.remove("d-none");
+//     } else {
+//       msg.classList.add("d-none");
+//     }
+//   });
+</script>

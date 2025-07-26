@@ -1,0 +1,96 @@
+body {
+  background-color: lightyellow;
+  height: 100%;
+  margin: 0;
+}
+
+.navbar-brand {
+  color: #FF385C !important
+}
+
+.f-info {
+  text-align: center;
+  color: #FF385C;
+}
+
+.f-info-socials {
+  font-size: 20px;
+}
+
+.f-info-links a {
+  color: #FF385C;
+
+}
+
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0.75rem;
+  border: none !important;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 0.75rem !important;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card-img-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0.8;
+}
+
+
+/* Page container is flex column layout */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 50vh;
+}
+
+/* Main content takes up remaining space */
+.content {
+  flex: 2;
+}
+
+/* Optional styling for footer */
+footer {
+  background-color: #f8f9fa;
+  padding: 1rem 0;
+  border-top: 1px solid #ddd;
+}
+
+.btn-pink {
+  background-color: #FF385C !important;
+  border: none !important;
+  color: white !important;
+  &:hover{
+    background-color: #dd2b4b !important;
+  }
+}
+
+.card-img-top-show {
+height: 50vh;
+border-radius: 0.75rem !important;
+}
+
+
+.custom-img {
+  width: 105%; /* Slightly wider than default */
+  margin-left: -2.5%; /* Optional: center it if needed */
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1477px !important;
+    }
+}
+
+.bg-pink{
+  background-color: #FF385C !important;
+}
+

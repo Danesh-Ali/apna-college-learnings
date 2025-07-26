@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        tr,td{
+            border: 1px solid;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Below is the user list</h1>
+    <a href="http://localhost:5000/addUser">  Add New User </a>
+    <table>
+        <th>
+            <tr>
+                <td>ID</td>
+                <td>Username</td>
+                <td>Email</td>
+                <td></td>
+                <td colspan="3">Action</td>
+            </tr>
+        </th>
+         <% for(user of users){ %> 
+        <tr>
+            <td> <%= user.id %>   </td>
+            <td> <%= user.username %>   </td>
+            <td> <%= user.email %>   </td>
+            <td> <%= user.password %>   </td>
+            
+             
+            <td> <button> <a href="http://localhost:5000/users/<%= user.id %>/edit">  Edit Username </a></button> </td>
+            <td> <button> <a href="http://localhost:5000/users/<%= user.id %>/delete">  Delete </a></button> </td>
+        
+           
+        </tr>
+        
+  <% } %> 
+  
+    </table>
+  
+</body>
+</html>
