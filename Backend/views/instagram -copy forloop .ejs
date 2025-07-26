@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>My Name is: <%= username %>
+    </h1>
+    <button>Follow</button>
+    <button>Share</button>
+    <h2> Account that follows you: </h2>
+
+    <ul>
+        <%for(name of followers){%>
+            <li>
+                <%= name %>
+            </li>
+
+            <%}%>
+    </ul>
+
+</body>
+
+</html>
