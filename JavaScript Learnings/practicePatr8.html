@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const students = [
+            {
+                name: "Shahid",
+                marks: 70,
+            },
+            {
+                name: "Tahir",
+                marks: 60,
+            },
+            {
+                name: "Zakir",
+                marks: 30,
+            },
+        ]
+
+
+
+        let gpa = students.map((el) => {
+            console.log(el.marks / 4)
+        })
+
+
+        students.forEach((elemnt) => {
+            console.log(elemnt.name)
+        })
+
+
+        let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+        let ans = 9
+
+        let ans2 = nums.filter((n) => n > ans)  // depending filter function 
+        console.log(ans2)
+
+        let final = nums.reduce((result, elemnt) => result + elemnt)
+        console.log(final)
+
+        //   ---------------------------------------
+
+        //  to find max of array value
+
+        let arrMax = [1, 2, 3, 4, 5, 6, 7, 8, 1]
+
+        let face = arrMax.reduce((min, el)=>{
+            if (min < el) {
+                console.log( el)
+            }else{
+                console.log('first')
+            }
+        })
+
+        console.log("Face", face)
+
+        let max = 0
+
+    
+
+        for (let i =1  ; i < arrMax.length; i++) {
+            if (max < arrMax[i]) {
+                max = arrMax[i]
+            } 
+        }
+
+        console.log("max1",max)
+
+        let result = arrMax.reduce((res, el) => {
+            if (res > el) {
+                return res
+            } else {
+                return el
+            }
+        })
+        console.log("max", result)
+
+
+    </script>
+</body>
+
+</html>

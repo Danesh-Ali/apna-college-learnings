@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Welcome to our website </h1>
+
+    <script>
+        // Callback HEll
+        let h1 = document.querySelector('h1')
+        function changeColor(color, delay, nextColorChange) {
+            setTimeout(() => {
+                h1.style.color = color
+                nextColorChange()
+            }, delay)
+        }
+        changeColor('red', 1000, () => {
+            changeColor('green', 1000, () => {
+                changeColor('blue', 1000)
+            })
+        })
+
+        function apiResultData(data) {
+            return new Promise((resolve, reject) => {
+                let internetSpeed = Math.floor(Math.random() * 10) + 1
+
+                if (internetSpeed > 5) {
+                    resolve("Data was Saved in DB")
+                } else {
+                    reject("Failour: Data was rejected")
+                }
+
+            })
+        }
+
+// using promise handle multiple apis
+        apiResultData("Data is here").then((result) => {
+            console.log("Data1 is saved")
+            console.log("promise reslt : ", result)
+            return apiResultData("Data2 is here").then((result) => {
+                console.log("Data2 was sent")
+                console.log("promise2 reslt : ", result)
+            })
+
+        }).catch(() => {
+            console.log("data is not saved")
+        })
+
+
+    </script>
+</body>
+
+</html>

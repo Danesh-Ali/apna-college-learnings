@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Write "quit" to quit the game!</h1>
+    <script>
+        const favMovie = "abc"
+        let guess = prompt("Guess my favourit movie name")
+
+        while (guess != favMovie && guess != 'quit') {
+            guess = prompt("Wrong guess. try again")
+
+        }
+        if (guess === favMovie) {
+            console.log('Congrats!')
+        } else {
+            console.log("You quit")  // we can also use this in  inner of the while loop
+        }
+
+        let num = 1
+
+        while(num<=5){
+            if(num=== 3){
+                console.log(num)
+                break;
+
+            }
+            console.log(num)
+            num++
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Square and sum the array elements using the arrow function and then find the average of the array
+
+        let arr = [3, 2, 'hello']
+        // let final = squareSum.reduce((res, el) => ((res * el) * (res * el) + (res + el)) / squareSum.length)
+
+        //  ---------------easy way----- step by step
+        let square = arr.reduce((res, el) => (res * el) * (res * el))
+        let sum = arr.reduce((res, el) => (res + el))
+        let final = (square + sum) / arr.length
+
+        console.log(final)
+
+        // ----------- NUMBER 2
+        // Create a new array using the map function whose each element is equal to the original element plus 5.
+
+        let plus = arr.map((el) => el + 5)
+        console.log(plus)
+        // -------------------------------------- NUMBER 3
+        // Create a new array whose elements are in uppercase of words present in the original array.
+
+        let upper = [...arr[2].toUpperCase()]
+        console.log(upper)
+
+
+        // -------------------NUMBER 4
+        // Write a function called doubleAndReturnArgs which accepts an array and a variable number of arguments. The function should return a new array with the original array values and all of the additional arguments doubled.
+
+        const doubleAndReturnArgs = (arr, ...args) => [
+            ...arr, ...arr.map((value) => value * 2)
+        ]
+
+
+        let doubleValue = doubleAndReturnArgs([1, 2, 3, 7])
+        console.log(doubleValue)
+
+        //  -----------NUMBEr 5
+        // Write a function called mergeObjects that accepts two objects and returns a new object which contains all the keys and values of the first object and second object.
+
+
+        let obj1 = {
+            name: "Shahid",
+            age: 17
+        }
+        let obj2 = {
+            name: "Tahir",
+            age: 18
+        }
+
+        const mergeObjects = (obj1, obj2) => (
+            { ...obj1, ...obj2 }
+        )
+
+        console.log(mergeObjects({ obj1 }, { obj2 }))
+
+
+    </script>
+</body>
+
+</html>

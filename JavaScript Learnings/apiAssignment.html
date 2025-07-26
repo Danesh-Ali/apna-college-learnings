@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <input type="text" value="canada">
+    <button>Search</button> <br>
+    <ul></ul>
+
+    <script>
+        let url = 'http://universities.hipolabs.com/search?name='
+
+        let btn = document.querySelector('button')
+        let input = document.querySelector('input')
+        let ul = document.querySelector('ul')
+
+        var state = state
+
+        async function getData(state) {
+            
+            try {
+                let res = await axios.get(url + state)
+                console.log(res.data[state-province])
+                return res.data
+
+            } catch (error) {
+                return error
+            }
+
+        }
+        // ----------------------
+
+        btn.addEventListener('click', async () => {
+    let state = input.value.trim()
+    ul.innerText = 'Loading...'
+    let universityList = await getData(state)
+    show(universityList)
+})
+
+
+        function show(colArr) {
+            ul.innerText = ''
+            input.value = ''
+            for (col of colArr) {
+                console.log('name', col.name)
+                let li = document.createElement('li')
+                li.innerText = col[state]
+                
+                ul.appendChild(li)
+                
+            
+            }
+                
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

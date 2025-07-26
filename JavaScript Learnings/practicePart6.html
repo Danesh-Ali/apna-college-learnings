@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calAvg(a, b, c) {
+            let avg = (a + b + c) / 3
+            console.log(avg)
+        }
+        calAvg(5, 9, 7)
+
+        function getSum(num) {  // to sum of all num from 1 to n like 1,2,3, so on etc
+            let sum = 1
+            for (let i = 1; i <= num; i++) {
+                sum *= i
+            }
+            return sum
+        }
+        console.log(getSum(2))
+
+        // concat of all array of strings-------------------------
+
+        let str = ['HI', "hello", "bye", '!']
+
+        function strConcat(str) {
+            let result = ''
+            for (let i = 0; i < str.length; i++) {
+                result += str[i]
+            }
+
+            return result
+        }
+        console.log(strConcat(str))
+
+
+        //----------------------
+        // functoin expression
+        let sum = function (a, b) {
+            return a + b
+        }
+        console.log(sum(1, 2))
+        //----------------------------------------higher order functoin---------------
+        let greet = function () {
+            console.log("hello")
+        }
+
+        function multipleFunc(func, count) {
+            for (let i = 1; i <= count; i++) {
+                func()
+            }
+        }
+
+        multipleFunc(greet, 3) // -----------------
+
+
+        //higher order function factory
+
+
+        let request = "even" // odd
+
+        function checkEvenOddFactory(request) {
+            if (request == "even") {
+                return function (n) {
+                    console.log(n % 2 == 0)
+                }
+            } else if (request === 'odd') {
+                return function (n) {
+                    console.log(n % 2 != 0)
+                }
+            } else {
+                console.log("wrong number ")
+            }
+        }
+        let check = checkEvenOddFactory(request);
+        check(2)
+
+    </script>
+</body>
+
+</html>

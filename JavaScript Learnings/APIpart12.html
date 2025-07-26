@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Get Random Facts</h1>
+    <button onclick=" getFacts()">Get new Facts</button>
+
+    <h3 id="fact"></h3>
+
+    <script>
+        let button = document.querySelector("button")
+        let h3 = document.querySelector("h3")
+
+
+        const URL2 = 'https://catfact.ninja/fact'
+        let config = { headers: { Accept: "application/json" } } // Headers
+
+        async function getFacts() {
+            try {
+                const res = await axios.get(URL2, config)
+                console.log(res.data.fact)
+                h3.innerText = res.data.fact
+            } catch (error) {
+                throw error
+            }
+        }
+
+
+
+
+        // -------------------------------------- old methods
+
+        // api chaning
+
+        /* fetch(URL)
+             .then((res) => {
+                 console.log(res)
+                 return res.json()
+             }).then((data) => {
+                 console.log(data)
+                 return fetch(URL)
+             })
+             .then((res) => {
+                 return res.json()
+             })
+             .then((data2) => {
+                 console.log(data2)
+             })
+             .catch((err) => {
+                 console.log("ERROR: ", err)
+             }) */
+
+        // -------------------------------------------------------
+
+        /*  async function fetchData() {
+              try {
+                  const res = await fetch(URL)   // fetch method
+                  const jsonData = await res.json()
+                  console.log(jsonData)
+  
+                  const res2 = await fetch(URL)
+                  const jsonData2 = await res2.json()
+                  console.log(jsonData2)
+              } catch (error) {
+                  throw error
+              }
+              console.log('bye')
+          }
+          fetchData() */
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>ENter " add "</h1>
+    <h1>ENter " lst "</h1>
+    <h1>ENter " delete "</h1>
+    <h1>ENter " quit "</h1>
+    <script>
+        let todo = []
+        let req = prompt("Enter your request ")
+        while (true) {
+            if (req == 'quit') {
+                console.log("Quitting app")
+                break;
+            } else if (req == "list") {
+                console.log('-----------------------')
+                for (let i = 0; i <todo.length; i++) {
+                    console.log(i, todo[i])
+
+                }
+
+                console.log('-----------------------')
+
+            } else if (req == 'add') {
+                let task = prompt("Enter your Task Details you want to add")
+                todo.push(task)
+                console.log("Task added")
+            } else if (req == "delete") {
+                let idx = prompt("Enter index of task you want to delete")
+                todo.splice(idx, 1)
+            }
+
+           req = prompt("PLease Enter your request")
+        }
+    </script>
+</body>
+
+</html>

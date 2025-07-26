@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            text-align: center;
+
+        }
+
+        #textArea {
+            width: 500px;
+            height: 200px;
+            text-align: center;
+            font-size: 20px;
+            line-height: 200px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Generate Random Colors</h1>
+        <h2>Random Colors Name here</h2>
+        <button>Generate Color</button> <br> <br>
+        <textarea id="textArea">This is new color</textarea>
+    </div>
+    <script>
+
+        let h1 = document.querySelector('h2')
+        let btn = document.querySelector('button')
+        let bgColor = document.querySelector('textArea')
+
+        btn.addEventListener("click", function(){
+            let red = Math.floor(Math.random() * 255)
+            let green = Math.floor(Math.random() * 255)
+            let blue = Math.floor(Math.random() * 255)
+
+            let color = `rgb(${red},${green},${blue})`
+            console.log(color)
+            h1.innerText = color
+            bgColor.style.backgroundColor = color
+        })
+    </script>
+</body>
+
+</html>

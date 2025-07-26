@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="addBtn()" id="button1">abc</button>
+    <input type="text" placeholder="enter 1" id="input">
+
+    <script>
+        let para = document.createElement('p')
+        para.innerText = 'HI, Im new paragrapgh'
+        let button = document.createElement('button')
+        button.style.backgroundColor = "red"
+        button.style.color = 'white'
+        button.innerText = 'Submit button'
+        let body = document.querySelector('body')
+        let input = document.createElement('input')
+        body.appendChild(input)
+        body.appendChild(para)
+
+        body.appendChild(button)
+
+    body.insertAdjacentElement("beforebegin", button)
+
+
+
+    </script>
+</body>
+
+</html>

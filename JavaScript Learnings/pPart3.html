@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Practice Questions</h1>
+    <script>
+        let start = ['january', 'july', 'March', 'April']
+       start.shift()
+       console.log(start.shift())
+       console.log(start)
+       start.unshift("june")
+       start.unshift("july")
+       console.log(start)
+
+       let car = ['bmw', 'maruti', 'Gwagon', 'Wagnor']
+       car.splice(1,0, "abc") // 1 index pr abc add ho gya
+       car.splice(1,1, "games") // 1 index delete ho k uskijaga pr game a gya
+       console.log(car)
+// first way easy
+       let month = ['january', 'july', 'March', 'April']
+       month.splice(0,1) // 0 index pr kia kdeletekrna 1 vlaue
+       console.log(month)
+       month.splice(1,0,'june')
+       console.log(month)
+
+       // second way one line
+       month.splice(0,2, 'july', 'june')  // single line
+       console.log(month)
+       month.reverse()
+       console.log(month)
+       month.indexOf('june')
+       console.log(month)
+    </script>
+</body>
+</html>

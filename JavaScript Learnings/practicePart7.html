@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let arr = [1, 2, 3, 4, 5, 6,7]
+
+        const arrAverage = (arr) => {
+            let total = 0
+
+            for (num of arr) {
+                console.log('Average')
+                total += num
+            }
+
+            return total / arr.length
+        }
+
+        console.log(arrAverage(arr))
+// -------------------------------------------------------
+
+        const square = (n) => {
+            return n * n
+        }
+
+        document.write(square(5))
+
+        const interval = setInterval(() => {
+            document.write("Hello world") + '<br>'
+
+        }, 2000)
+
+        setInterval(() => {
+            clearInterval(interval)
+            console.log('Stop')
+        }, 10000)
+
+
+        const isEven = (n) => {
+            if (n % 2 === 0) {
+                console.log('Even')
+            } else {
+                console.log("odd")
+            }
+        }
+
+        console.log(isEven(8))
+        // ----------------------------------------------
+
+        let length = 4
+
+        function callback() {
+            console.log(this.length)
+        }
+
+        let object = {
+            length: 5,
+            method(callback) {
+                callback()
+            }
+        }
+
+        object.method(callback, 1, 2)
+
+
+
+
+
+    </script>
+</body>
+
+</html>

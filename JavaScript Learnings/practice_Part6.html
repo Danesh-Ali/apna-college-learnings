@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Question no 1
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        let num = 8
+
+        function getEelemnt(arr, num) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > num) {
+                    console.log(arr[i])
+                }
+            }
+        }
+        getEelemnt(arr, num)
+
+        // Question no 2
+
+        let str = "abcdabcdefgggh";
+
+        let newCode = [...new Set(str)].join('')
+        console.log(newCode)
+
+        // function getUniqueChars(str) {
+        //     let uniqueChars = "";
+        //     for (let i = 0; i < str.length; i++) {
+        //         if (uniqueChars.indexOf(str[i]) == -1) {
+        //             uniqueChars += str[i];
+        //         }
+        //     }
+        //     return uniqueChars;
+        // }
+
+
+        // let ans = getUniqueChars(str);
+        // console.log(ans); // Output: abcdefgh
+
+
+        let str1 = "abcdabcdefgggh";          // Example string
+        function getUniqueChar(str1) {
+            let uniqueChars = "";         // To store unique characters
+            for (char of str1) {
+                if (!uniqueChars.includes(char)) {
+                    uniqueChars += char
+                }
+
+            }
+
+            return uniqueChars
+        }
+
+        let new1 = getUniqueChar(str1)
+        console.log(new1)
+        // Question no 3 -------------------------------------------
+
+        let country = ["Australia", "Germany", "United States of America"];
+
+
+
+        function longestName(country) {
+            let ansIdx = 0
+
+            for (let i = 0; i < country.length; i++) {
+                let ansLen = country[ansIdx].length
+                let currentLen = country[i].length
+
+                if (currentLen > ansLen) {
+                    ansIdx = i
+                }
+            }
+
+            return country[ansIdx]
+        }
+
+        let largestCountry = longestName(country)
+        console.log(largestCountry)
+
+        // using for of looop
+
+        function longestName2(country) {
+            let longest = "";  // Start with an empty string
+
+            for (name of country) {
+                // console.log(name.length)
+                if (name.length > longest.length) {
+                    longest = name;
+                }
+            }
+
+            return longest;
+        }
+
+        console.log(longestName2(country));  // Output: "United States of America"
+
+    </script>
+</body>
+
+</html>

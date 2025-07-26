@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Guess the Number Game!</p>
+    <script>
+        let max = prompt("Enter the max number")
+        let random = Math.floor(Math.random() * max) + 1
+        let guess = prompt("Enter the Guess Number")
+        while (true) {
+            if (guess == "quit") {
+                console.log("YOu quit the game")
+                document.write("<h1>You quit the game </h1> ")
+                break;
+            }
+
+            if (guess == random) {
+                console.log("YOu guess the the number , COngrats!", guess)
+                document.write('<h1> You guess the the number , Congrats! ', + guess + '</h1>')
+                break;
+            } else if (guess< random){
+                guess = prompt("You number was too small. Please enter large number")
+            }else{
+                guess = prompt("You number was too large. Please enter small number")
+
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

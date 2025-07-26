@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Welcome </h1>
+    <script>
+        let h1 = document.querySelector('h1')
+        function ChangeColor(color, delay) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                h1.style.color = color   
+                console.log(`Color is:  ${color} `)    
+                resolve("color was changed")     
+            }, delay)
+            })
+           
+        }
+
+        async function showColor() {
+            await ChangeColor("red", 1000)
+            await ChangeColor("green", 3000)
+           
+        }
+
+        showColor()
+      
+    </script>
+</body>
+
+</html>
